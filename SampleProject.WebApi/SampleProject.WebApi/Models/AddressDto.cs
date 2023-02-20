@@ -1,12 +1,14 @@
 ﻿using System;
+using SampleProject.UsefulTypes;
+
 namespace SampleProject.WebApi
 {
 	public class AddressDto
 	{
-		public string AddressLine { get; set; }
-		public string City { get; set; }
-		public string State { get; set; }
-		public string ZipCode { get; set; }
+		public Definable<string> AddressLine { get; set; }
+		public Definable<string> City { get; set; }
+		public Definable<string> State { get; set; }
+		public Definable<string> ZipCode { get; set; }
 	}
 }
 

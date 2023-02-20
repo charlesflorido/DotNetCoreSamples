@@ -18,7 +18,10 @@ namespace SampleProject.WebApi {
                 });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(opts =>
+            {
+                opts.EnableAnnotations(enableAnnotationsForPolymorphism: true, enableAnnotationsForInheritance: true);
+            });
             //builder.Services.AddHttpContextAccessor();
 
             var connectionString = builder.Configuration.GetConnectionString("SampleDb");
